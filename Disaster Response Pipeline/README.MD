@@ -11,8 +11,11 @@ Background:
   Following this a web application is used to solicit disaster messages and then suggests where to direct the aid. 
   
  Workspace (folder) structure:
+ 
   /app : containes the files for the implementation of the web application
-  /data : containes the messages and categories (CSV) files and will contain the newly created SQL database file
-  /models : containes the classifier code
+ 
+ /data : containes the messages and categories (CSV) files and will contain the newly created SQL database file
+ 
+ /models : containes the classifier code
   
 
