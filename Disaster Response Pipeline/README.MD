@@ -12,11 +12,11 @@ Background:
   
  Workspace (folder) structure:
  
-  /app : containes the files for the implementation of the web application
+  **/app** : containes the files for the implementation of the web application
  
- /data : containes the messages and categories (CSV) files and will contain the newly created SQL database file
+ **/data** : containes the messages and categories (CSV) files and will contain the newly created SQL database file
  
- /models : containes the classifier code
+ **/models** : containes the classifier code
   
 Instructions:
   From the root directory please execute these steps:
@@ -24,18 +24,18 @@ Instructions:
   
       **Please note you may have to delete DR.db if it already exists**
       
-      -This step will Extract, Transform and Load (ETL) the messages and categories that were collected as input to the project
+      - This step will Extract, Transform and Load (ETL) the messages and categories that were collected as input to the project
       
-      -The output will be a SQL table in a SQL database
+      - The output will be a SQL table in a SQL database
       
   2.  *python models/train_classifier.py data/DR.db dr_project.sav*
   
       **Please use the same DB that was created in the last step**
       
-      -This step will execute the Machine Learning (ML) part of the project by training the classifier model and saves it
+      - This step will execute the Machine Learning (ML) part of the project by training the classifier model and saves it
       
   3.  *python app/run.py*
       
-      -This program will execute the web app and use the trained model to classify operator input and display the interpreted data and action group.
+      - This program will execute the web app and use the trained model to classify operator input and display the interpreted data and action group.
  
 
