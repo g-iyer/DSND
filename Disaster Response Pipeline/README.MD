@@ -23,12 +23,15 @@ Instructions:
   1.  *python data/process_data.py data/disaster_message.csv data/disaster_categories.csv data/DR.db* 
   
       ** Please note you may have to delete DR.db if it already exists **
+      
       ** This step will Extract, Transform and Load (ETL) the messages and categories that were collected as input to the project
+      
       ** The output will be a SQL table in a SQL database
       
   2.  *python models/train_classifier.py data/DR.db dr_project.sav*
   
       ** Please use the same DB that was created in the last step **
+      
       ** This step will execute the Machine Learning (ML) part of the project by training the classifier model and saves it
       
   3.  *python app/run.py*
