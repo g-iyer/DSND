@@ -40,5 +40,5 @@ This project combines multiple activities
  
 
 
-./screenshots/dataset_overview.jpg
+!(/screenshots/dataset_overview.jpg?raw="true")
 
