@@ -40,5 +40,5 @@ This project combines multiple activities
  
 
 
-!(/screenshots/dataset_overview.jpg?raw="true")
+!(https://github.com/g-iyer/DSND/Disaster Response Pipeline/screenshots/dataset_overview.jpg?raw="true")
 
