@@ -40,5 +40,5 @@ This project combines multiple activities
  
 
 
-(dataset_overview.jpg?raw="true")
+![Dataset Overview](dataset_overview.jpg)
 
