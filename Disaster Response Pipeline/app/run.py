@@ -1,7 +1,9 @@
 import json
 import plotly
 import pandas as pd
+import numpy as np
 
+import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
@@ -10,7 +12,18 @@ from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
+import re
+import warnings
+warnings.simplefilter('ignore')
 
+# for processing
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, make_scorer
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.multioutput import MultiOutputClassifier
+from sklearn.svm import SVC
+from sklearn.pipeline import Pipeline
 
 app = Flask(__name__)
 
@@ -26,11 +39,11 @@ def tokenize(text):
     return clean_tokens
 
 # load data
-engine = create_engine('sqlite:///../data/YourDatabaseName.db')
-df = pd.read_sql_table('YourTableName', engine)
+engine = create_engine('sqlite:///'+'./data/DR.db')
+df = pd.read_sql_table('msgs_cat_table', engine)
 
 # load model
-model = joblib.load("../models/your_model_name.pkl")
+model = joblib.load("./models/classifier.pkl")
 
 
 # index webpage displays cool visuals and receives user input text for model
@@ -42,6 +55,16 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+    
+    category = list(df.columns[4:])
+    category_counts = []
+    
+    for column in category:
+    	category_counts.append(np.sum(df[column]))
+    	
+    categories = df.iloc[:,4:]
+    categories_mean = categories.mean().sort_values(ascending=False)[1:11]
+    categories_names = list(categories_mean.index)
     
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
@@ -63,7 +86,21 @@ def index():
                     'title': "Genre"
                 }
             }
+        },
+        {
+        	'data':[
+        		Bar(
+        			x=categories_names,
+        			y=categories_mean
+        			)
+        		],
+        	'layout':{
+        		'title':'Top 10 categories',
+        		'yaxis':{ 'title':"Mean"},
+        		'xaxis':{ 'title':"Categoris"}
+        		}
         }
+        		
     ]
     
     # encode plotly graphs in JSON
