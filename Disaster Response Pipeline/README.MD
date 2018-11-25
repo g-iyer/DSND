@@ -39,3 +39,6 @@ This project combines multiple activities
       - This program will execute the web app and use the trained model to classify operator input and display the interpreted data and action group.
  
 
+
+./screenshots/dataset_overview.jpg
+
