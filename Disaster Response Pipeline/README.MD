@@ -49,7 +49,7 @@ This project combines multiple activities
   
 ## Instructions:
   From the root directory please execute these steps:
-  1.  *_python data/process_data.py data/disaster_message.csv data/disaster_categories.csv data/DR.db_* 
+  1.  **_python data/process_data.py data/disaster_message.csv data/disaster_categories.csv data/DR.db_** 
   
       **Please note you may have to delete DR.db if it already exists**
       
@@ -57,13 +57,13 @@ This project combines multiple activities
       
       - The output will be a SQL table in a SQL database
       
-  2.  _*python models/train_classifier.py data/DR.db classifier.pkl*_
+  2.  _**python models/train_classifier.py data/DR.db classifier.pkl**_
   
       **Please use the same DB that was created in the last step**
       
       - This step will execute the Machine Learning (ML) part of the project by training the classifier model and saves it
       
-  3.  *python app/run.py*
+  3.  **_python app/run.py_**
       
       - This program will execute the web app and use the trained model to classify operator input and display the interpreted data and action group.
  
