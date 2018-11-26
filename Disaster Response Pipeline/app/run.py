@@ -1,9 +1,11 @@
+''' This program uses the trained model from the train_classifier program to classify incoming disaster messages
+'''
 import json
 import plotly
 import pandas as pd
 import numpy as np
 
-import nltk
+#import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
@@ -12,18 +14,9 @@ from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
-import re
+
 import warnings
 warnings.simplefilter('ignore')
-
-# for processing
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, make_scorer
-from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.multioutput import MultiOutputClassifier
-from sklearn.svm import SVC
-from sklearn.pipeline import Pipeline
 
 app = Flask(__name__)
 
