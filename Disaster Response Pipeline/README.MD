@@ -39,6 +39,21 @@ This project combines multiple activities
       - This program will execute the web app and use the trained model to classify operator input and display the interpreted data and action group.
  
 
+## Dataset statistics - a sample
+![Dataset Overview](screenshots/dataset_overview.jpg)
 
-![Dataset Overview](dataset_overview.jpg)
+![Disaster Categories](screenshots/top10.jpg)
+
+## Test case 1: Need water cloths and food 
+
+![case_1_1](screenshots/need_water_cloths_food_1.jpg)
+![case_1_2](screenshots/need_water_cloths_food_2.jpg)
+![case_1_3](screenshots/need_water_cloths_food_3.jpg)
+
+## Test case 2: People hurt in fire
+
+![case_2_1](screenshots/people_hurt_in_fire_1.jpg)
+![case_2_1](screenshots/people_hurt_in_fire_2.jpg)
+
+
 
