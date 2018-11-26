@@ -24,6 +24,7 @@ nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem.porter import PorterStemmer
+from nltk.stem import WordNetLemmatizer 
 
 # for processing
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, make_scorer
@@ -58,12 +59,21 @@ def tokenize(text):
     text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower())
 # Tokenize
     tokens = word_tokenize(text)
-# stem
-    stemmer = PorterStemmer()
-    stop_words = stopwords.words("english")
-    stemmed = [stemmer.stem(word) for word in tokens if word not in stop_words]
+# Lemmatize (using Lemmatize insted of stemming - as per reviewer comment)
+    lemmatizer = WordNetLemmatizer()
+    clean_tokens = []
+    for tok in tokens:
+        clean_tok = lemmatizer.lemmatize(tok).lower().strip()
+        clean_tokens.append(clean_tok)
+    return clean_tokens
+# Stem - (removed as per reviewer comment)
+#    stemmer = PorterStemmer()
+#    stop_words = stopwords.words("english")
+#    stemmed = [stemmer.stem(word) for word in tokens if word not in stop_words]
     
-    return stemmed 
+    return clean_tokens
+
+
 
 # Define performance metric for use in grid search scoring object
 def f1_metric(y_true, y_pred):
