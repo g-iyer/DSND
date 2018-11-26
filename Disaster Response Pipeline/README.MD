@@ -57,7 +57,7 @@ This project combines multiple activities
       
       - The output will be a SQL table in a SQL database
       
-  2.  *python models/train_classifier.py data/DR.db dr_project.sav*
+  2.  *python models/train_classifier.py data/DR.db classifier.pkl*
   
       **Please use the same DB that was created in the last step**
       
