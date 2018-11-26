@@ -49,7 +49,7 @@ This project combines multiple activities
   
 ## Instructions:
   From the root directory please execute these steps:
-  1.  *python data/process_data.py data/disaster_message.csv data/disaster_categories.csv data/DR.db* 
+  1.  *_python data/process_data.py data/disaster_message.csv data/disaster_categories.csv data/DR.db_* 
   
       **Please note you may have to delete DR.db if it already exists**
       
@@ -57,7 +57,7 @@ This project combines multiple activities
       
       - The output will be a SQL table in a SQL database
       
-  2.  *python models/train_classifier.py data/DR.db classifier.pkl*
+  2.  _*python models/train_classifier.py data/DR.db classifier.pkl*_
   
       **Please use the same DB that was created in the last step**
       
