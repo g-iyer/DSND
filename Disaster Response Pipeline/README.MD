@@ -3,20 +3,20 @@ Here you will find my files and code for the Disaster Response Pipeline Project
 This project combines multiple activities
   - ETL activities
   - ML activities (including NLP activities)
-  - Deployment
+  - Deployment (as a web application that takes a disaster message as input and displays the categories and actions possible)
     
-## Background:
-  This project is based on a project by FigureEight datasets that were collected for a disaster response project.
+## Project Background:
+  This project is based on a project by FigureEight. The company collected data on categories of disasters and messages that were sent by people to analyze and organize proper responses to any disaster.
   This implementation merges, cleans and then creates a SQL database that will be used by a Machine Learning model to categorize the data.
-  Following this a web application is used to solicit disaster messages and then suggests where to direct the aid. 
+  Following this a web application is used to solicit disaster messages and then displays categories that may fit the message so that aid/response can be properly directed. 
   
  ## Workspace (folder) structure:
  
-  **/app** : containes the files for the implementation of the web application
+    **/app** : containes the files for the implementation of the web application
  
- **/data** : containes the messages and categories (CSV) files and will contain the newly created SQL database file
+    **/data** : containes the messages and categories (CSV) files and will contain the newly created SQL database file
  
- **/models** : containes the classifier code
+    **/models** : containes the classifier code
   
 ## Instructions:
   From the root directory please execute these steps:
