@@ -10,6 +10,14 @@ This project combines multiple activities
   This implementation merges, cleans and then creates a SQL database that will be used by a Machine Learning model to categorize the data.
   Following this a web application is used to solicit disaster messages and then displays categories that may fit the message so that aid/response can be properly directed. 
   
+  Please note that the datasets are from Udacity.
+  
+## Summary: 
+  The project uses natural language processing techniques to clean the data and make it ready for machine learning. In ML we use the RandomForest classifer to identify the various categories and messages to train a model. 
+  The web app uses the model to suggest disaster categories and possible responses based on user input.
+  
+  The model performs well as can be seen in the scores as well as in the output of the web app. 
+    
  ## Workspace (folder) structure:
  
    **/app** : containes the files for the implementation of the web application
@@ -36,7 +44,8 @@ This project combines multiple activities
         
         
 ## Environment:
-  Programs were developed in Python 3. Key libraries 
+  Programs were developed in Python 3. Key libraries used were pandas, numpy, mltk, sqlalchemy, sklearn and pickle (besides others as needed). 
+  
   
 ## Instructions:
   From the root directory please execute these steps:
@@ -59,18 +68,18 @@ This project combines multiple activities
       - This program will execute the web app and use the trained model to classify operator input and display the interpreted data and action group.
  
 
-## Dataset statistics - a sample
+## Dataset statistics - a sample : These screenshots show the genre of the messages and the top 10 categories.
 ![Dataset Overview](screenshots/dataset_overview.jpg)
 
 ![Disaster Categories](screenshots/top10.jpg)
 
-## Test case 1: Need water cloths and food 
+## Test case 1: Need water cloths and food : this shows one of the inputs and the resulting highlights from the model
 
 ![case_1_1](screenshots/need_water_cloths_food_1.jpg)
 ![case_1_2](screenshots/need_water_cloths_food_2.jpg)
 ![case_1_3](screenshots/need_water_cloths_food_3.jpg)
 
-## Test case 2: People hurt in fire
+## Test case 2: People hurt in fire : this is another example of the model's output in the web app.
 
 ![case_2_1](screenshots/people_hurt_in_fire_1.jpg)
 ![case_2_1](screenshots/people_hurt_in_fire_2.jpg)
