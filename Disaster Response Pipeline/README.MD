@@ -13,18 +13,27 @@ This project combines multiple activities
  ## Workspace (folder) structure:
  
    **/app** : containes the files for the implementation of the web application
+   
         - /templates - this folder contains the .html needed for the web app
+   
         - run.py - this program executes the web app and displays the interface at /localhost:3001/
  
    **/data** : containes the messages and categories (CSV) files and will contain the newly created SQL database file
+        
         - disaster_messages.csv : all messages data
-        - disaster_categories.csv : all categories data 
+        
+        - disaster_categories.csv : all categories data
+        
         - DR.db : Output of the ETL process as a SQL database
+        
         - process_data.py : program that merges, cleans and processes the data and creates the SWL database
  
    **/models** : containes the classifier code
+   
         - train_classifier.py : the ML model training and creation program. This will save the trained model as a PICKLE file
+        
         - classifier.pkl : output of train_classifier.py program
+        
         
 ## Environment:
   Programs were developed in Python 3. Key libraries 
